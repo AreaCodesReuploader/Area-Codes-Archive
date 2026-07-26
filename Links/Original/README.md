@@ -215,6 +215,4 @@
 [https://www.wattpad.com/1018534265-area-codes-dreamwastaken-seventy]
 
 ### Chapter Seventy-One*
-[]
-
-* Chapter 71 is the Original Upload's announcement for Double Digits and is, as of present, still unfound
+- Chapter 71 is the Original Upload's announcement for Double Digits and is, as of present, still unfound
