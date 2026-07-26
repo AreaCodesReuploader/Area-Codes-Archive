@@ -2,86 +2,66 @@
 
 This repository preserves the original, reuploaded, and archived versions of **“Area Codes // dreamwastaken”** by **@ihaveajuicebox**.
 
-It serves as a forever home for:
+It serves as a long-term home for:
 
-* Original Wattpad chapter links
-* Reuploaded Wattpad chapter links
+* Original Wattpad story and chapter links
+* The completed Wattpad reupload
 * Archive.today captures of the original story
 * Locally saved Wattpad chapters in HTML format
 * Companion folders associated with saved HTML pages
 * Cover images and chapter images
 * Bing cache web captures
-* YouTube chapter readings that were useful during the reupload process
+* YouTube chapter readings used during reconstruction
 * The planned Archive of Our Own edition
-* Downloadable editions generated from the completed archive
+* Downloadable archival editions
 
 This repository does not claim authorship of the story.
 
 ## Project Status
 
-The archive is currently being organized and prepared for an eventual Archive of Our Own upload.
+The complete Wattpad reupload has already been reconstructed and published by the repository maintainer.
 
-Some materials are complete, while others still need to be:
+That reconstruction was completed personally using surviving material gathered from several sources, including:
 
-* Located
-* Identified
-* Matched to chapters
-* Deduplicated
-* Converted
-* Reviewed
-* Uploaded
+* Cached versions of the original story
+* Locally saved Wattpad pages
+* YouTube chapter readings
+* Original chapter links
+* Archived pages
+* The final chapters briefly reposted by the original author before being removed again
 
-See [`TODO.md`](TODO.md) for the active preservation and upload checklist.
+The current project is focused on organizing and preserving the source material, documenting how the reconstruction was completed, preparing the AO3 edition, and producing durable archival copies.
+
+See:
+
+* [`TODO.md`](TODO.md) for remaining work
+* [`CREDITS.md`](CREDITS.md) for contributor and tool credits
+* [`NOTICE.md`](NOTICE.md) for authorship and archival-purpose information
+* [`SOURCES.md`](SOURCES.md) for reconstruction sources and provenance
 
 ## External Links
 
 ### Wattpad
 
 * [Original Wattpad story][1] — currently unavailable
-* [Wattpad reupload][2]
+* [Completed Wattpad reupload][2]
 
 ### Archive of Our Own
 
 * AO3 reupload — planned
-* AO3 chapter-by-chapter edition — planned
 * AO3 downloadable editions — planned
 
 ### Internet Archive and Wayback Machine
 
 * Internet Archive compiled edition — planned
 * Wayback Machine capture of the AO3 work — planned
-* Wayback Machine capture of AO3 chapter pages — planned
-* Wayback Machine capture of AO3 download links — planned
-
-### YouTube Chapter Readings
-
-A number of YouTube videos contained readings of chapters from the story and were useful when reconstructing or checking the reuploaded version.
-
-These will be indexed in:
-
-```text
-Links/YouTube Readings/README.md
-```
-
-The index should preserve:
-
-* Video title
-* Channel name
-* Original YouTube URL
-* Archived URL, when available
-* Chapter or chapter range covered
-* Upload date, when known
-* Current availability
-* Notes about audio quality or missing sections
-* Whether the reading was used to verify the reupload
-
-Known playlists, channels, and individual video links will be added as they are located.
+* Wayback Machine captures of relevant YouTube reading pages — planned where available
 
 ## Repository Contents
 
-### Links
+### `Links/`
 
-The `Links/` directory contains chapter-by-chapter indexes and external references.
+Contains chapter-by-chapter link indexes and external references.
 
 ```text
 Links/
@@ -99,32 +79,32 @@ Links/
 
 Contains the original Wattpad story and chapter URLs.
 
-Many of these URLs are now dead, but they are preserved because they contain the original story and chapter IDs and are useful for archival matching.
+Many of these links are now dead, but they are preserved because the original story and chapter IDs remain useful for matching archived pages and reconstruction sources.
 
 #### `Links/Reupload/`
 
-Contains the live Wattpad reupload story and chapter URLs.
-
-These links will be matched chapter-by-chapter against the original version.
+Contains the live links for the completed Wattpad reupload.
 
 #### `Links/Webpage Captures/`
 
-Contains links to Archive.today and other external webpage captures of the original story.
+Contains links to Archive.today and other external webpage captures.
 
-This directory contains indexes and URLs, not the locally saved HTML files themselves.
+This folder contains indexes and URLs, not the locally saved HTML files themselves.
 
 #### `Links/YouTube Readings/`
 
-Contains links to chapter readings uploaded to YouTube.
+Contains links to YouTube chapter readings used during reconstruction or verification.
 
-These recordings may be useful for:
+Each entry should record:
 
-* Confirming chapter text
-* Recovering missing wording
-* Confirming chapter order
-* Identifying chapter breaks
-* Comparing the original and reuploaded versions
-* Locating missing author notes or dialogue
+* Video title
+* Channel name
+* Original URL
+* Archived URL, when available
+* Video ID
+* Chapter or chapter range
+* Current availability
+* How the recording was used
 
 ## Planned Repository Structure
 
@@ -133,7 +113,8 @@ Area-Codes-Archive/
 ├── README.md
 ├── TODO.md
 ├── NOTICE.md
-├── ATTRIBUTIONS.md
+├── CREDITS.md
+├── SOURCES.md
 │
 ├── Links/
 │   ├── Original/
@@ -150,9 +131,6 @@ Area-Codes-Archive/
 │   ├── Chapter One/
 │   │   ├── Area Codes __ dreamwastaken - one - Wattpad.html
 │   │   └── Area Codes __ dreamwastaken - one - Wattpad_files/
-│   ├── Chapter Fifteen/
-│   │   ├── Area Codes __ dreamwastaken - fifteen - Wattpad.html
-│   │   └── Area Codes __ dreamwastaken - fifteen - Wattpad_files/
 │   └── ...
 │
 ├── Images/
@@ -193,13 +171,13 @@ Area-Codes-Archive/
     └── README.md
 ```
 
-This is a planned structure. Empty folders do not need to be created until files are ready to be added.
+This is a planned structure. Empty folders do not need to be created before files are ready to be added.
 
-## Saved Chapters
+## Saved HTML Pages
 
 The `Saved Chapters (HTML)/` directory contains locally saved Wattpad pages.
 
-Whenever an HTML download has an associated `_files` folder, the HTML file and companion folder should remain together.
+Whenever an HTML file has an associated `_files` folder, the HTML file and companion folder should remain together.
 
 Example:
 
@@ -219,32 +197,32 @@ Companion folders may contain:
 * Cached page resources
 * Other assets referenced by the saved HTML
 
-Some companion folders may be empty. They should not be deleted until the HTML file has been reviewed and tested.
+Some companion folders may be empty. They should not be removed until the corresponding HTML page has been inspected and tested.
 
 ## Images
 
 The `Images/` directory preserves:
 
 * Original cover variants
-* Images embedded inside chapters
-* Possible chapter images that have not yet been identified
-* Images recovered from saved HTML companion folders
-* Images recovered from screenshots, phone storage, or cloud backups
+* Images embedded in chapters
+* Images recovered from saved HTML resource folders
+* Images recovered from screenshots, caches, phone storage, or cloud backups
+* Unidentified images that may belong to the story
 
-Confirmed chapter images should be stored separately from unidentified candidates.
+Confirmed chapter images should be stored separately from uncertain candidates.
 
 ## Web Captures
 
-The `Web Captures/` directory contains saved screenshots or image-based captures rather than ordinary HTML pages.
+The `Web Captures/` directory contains saved screenshots or image-based captures rather than ordinary chapter HTML pages.
 
 This includes:
 
 * Bing cache captures
-* Archive.today screenshots or downloads
-* Unidentified web captures
+* Archive.today captures saved as images or downloads
+* Unidentified screenshots
 * Other cached page images
 
-Original filenames should be preserved until each capture has been identified.
+Original filenames should be preserved until the capture has been identified.
 
 ## AO3 Edition
 
@@ -255,16 +233,16 @@ This will include:
 * Work metadata
 * Chapter ordering
 * Cleaned chapter text
-* Chapter-specific notes
-* Image placement records
+* Chapter-specific source notes
+* Image-placement records
 * Upload progress
 * Final AO3 links
 
-The AO3 upload will be performed manually after the archive has been reviewed.
+The AO3 upload will be completed manually after the repository materials have been reviewed.
 
 ## Downloads
 
-The `Downloads/` directory will contain downloadable versions of the completed archive or AO3 edition.
+The `Downloads/` directory will contain downloadable versions of the completed AO3 or archival edition.
 
 Planned formats include:
 
@@ -274,51 +252,51 @@ Planned formats include:
 * AZW3
 * MOBI
 
-Files will be added only after the full chapter set and formatting have been verified.
+## AI-Assisted Work
+
+Artificial intelligence tools were used during the creation and organization of this repository.
+
+AI assistance has included:
+
+* Drafting and revising Markdown documentation
+* Planning the repository structure
+* Formatting chapter-link indexes
+* Comparing URL patterns
+* Explaining recovered timestamps
+* Generating and refining scripts
+* Creating file-inventory and duplicate-detection workflows
+* Assisting with image-dimension checks
+* Planning local HTML metadata extraction
+* Producing preservation and AO3-preparation checklists
+
+AI tools did not write the original story and are not credited as authors of it.
+
+All AI-assisted output should be reviewed by a human before it is committed, executed, or used in publication.
+
+Further details are recorded in [`CREDITS.md`](CREDITS.md).
 
 ## Preservation Rules
 
 1. Preserve original filenames wherever practical.
 2. Record original filenames when files are renamed.
-3. Keep downloaded HTML files with their associated `_files` folders.
+3. Keep downloaded HTML files with associated `_files` folders.
 4. Do not assume an empty companion folder is unnecessary until the page has been tested.
-5. Preserve duplicates until hashes confirm that they are identical.
-6. Keep dead original URLs because their IDs remain historically useful.
-7. Preserve original source files before editing or converting them.
+5. Preserve duplicates until hashes confirm they are identical.
+6. Keep dead original URLs because their IDs remain useful.
+7. Preserve untouched source files before cleaning, converting, or editing them.
 8. Place uncertain material in an `Unidentified` folder instead of deleting it.
-9. Record the source and purpose of files whenever known.
-10. Keep YouTube reading links even when the videos are unavailable, provided the original URLs or identifiers survive.
-11. Preserve archived video links separately from live YouTube links.
-12. Do not automatically scrape Wattpad when local files or archived pages can be used instead.
+9. Record the source and purpose of each file whenever known.
+10. Keep YouTube reading links and video IDs even when videos become unavailable.
+11. Keep large video files outside the Git repository.
+12. Prefer processing local files over automatically scraping Wattpad.
 
 ## Attribution and Rights
 
 “Area Codes // dreamwastaken” was written by **@ihaveajuicebox**.
 
-This repository is an archival and preservation project. It does not claim authorship of the story and does not grant a new license over the original work.
+This repository is an archival and preservation project. It does not claim original authorship and does not grant a new license over the story.
 
-Any scripts, indexes, manifests, or original documentation added to this repository may be separately licensed later.
-
-## AI-Assisted Work
-
-Artificial intelligence tools were used during the creation and organization of this repository.
-
-AI assistance may have been used for:
-
-* Drafting and revising repository documentation
-* Generating or refining scripts
-* Extracting and formatting chapter links
-* Comparing link patterns
-* Planning the repository structure
-* Producing checklists and manifests
-* Assisting with file-inventory and metadata-processing workflows
-
-All AI-assisted output should be reviewed by a human before it is relied upon, committed, or used in the Archive of Our Own reupload.
-
-AI tools were not the original author of “Area Codes // dreamwastaken” and are not credited as such (LLMs weren't even publicly available at the time to non-technical individuals. Only a scant few APIs). The original story remains the work of **@ihaveajuicebox**.
-
-Human contributors, archival sources, and tool usage are documented in [`ATTRIBUTIONS.md`](ATTRIBUTIONS.md).
-
+See [`NOTICE.md`](NOTICE.md) for the full notice.
 
 [1]: https://www.wattpad.com/story/251081626-area-codes-dreamwastaken
 [2]: https://www.wattpad.com/story/350625442-area-codes-dreamwastaken-reuploaded
