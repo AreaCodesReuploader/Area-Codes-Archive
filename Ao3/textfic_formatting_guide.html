@@ -1,0 +1,1229 @@
+<h2>Text-Fic Formatting Guide</h2>
+
+<p>
+  This chapter explains how to format the text-message portions of this fic during the AO3 reupload.
+  It is intended as a reference for anyone helping transfer, edit, or proofread chapters.
+</p>
+
+<p>
+  The work uses an AO3 work skin to create left- and right-aligned message bubbles.
+  The HTML classes determine how each message appears.
+</p>
+
+<p>
+  Paste chapter formatting into AO3 using the <strong>HTML editor</strong>, not the Rich Text editor.
+  Always use AO3's Preview function before posting.
+</p>
+
+<h3>Important orientation rule</h3>
+
+<ul>
+  <li><strong>Incoming messages</strong> appear on the <strong>left</strong>.</li>
+  <li><strong>Outgoing messages</strong> appear on the <strong>right</strong>.</li>
+  <li>Incoming messages are messages received by the owner of the phone being shown.</li>
+  <li>Outgoing messages are messages sent by the owner of the phone being shown.</li>
+</ul>
+
+<p>
+  Do not decide the direction based on which character is more important.
+  Decide it based on whose phone or point of view the conversation is being displayed from.
+</p>
+
+<hr />
+
+<h2>1. The basic conversation wrapper</h2>
+
+<p>
+  Every text conversation must be placed inside a container using the
+  <code>textfic</code> class.
+</p>
+
+<p>
+  The contact name may be shown at the top using the
+  <code>contact-name</code> class.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <p class="contact-name">Unknown Number</p>
+
+  <div class="message incoming">
+    <p class="bubble">This is an incoming message.</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">This is an outgoing message.</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="textfic"&gt;
+
+  &lt;p class="contact-name"&gt;Unknown Number&lt;/p&gt;
+
+  &lt;div class="message incoming"&gt;
+    &lt;p class="bubble"&gt;This is an incoming message.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="message outgoing"&gt;
+    &lt;p class="bubble"&gt;This is an outgoing message.&lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>2. Incoming messages</h2>
+
+<p>
+  Incoming messages use both the <code>message</code> and
+  <code>incoming</code> classes.
+  They appear on the left side and use the light-gray bubble.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble">if you don't wake up in the next ten minutes, I'll kill you</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;if you don't wake up in the next ten minutes, I'll kill you&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>3. Outgoing messages</h2>
+
+<p>
+  Outgoing messages use both the <code>message</code> and
+  <code>outgoing</code> classes.
+  They appear on the right side.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message outgoing">
+    <p class="bubble">it's 3 in the afternoon ???</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message outgoing"&gt;
+  &lt;p class="bubble"&gt;it's 3 in the afternoon ???&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>4. Separate messages need separate wrappers</h2>
+
+<p>
+  Every individual text message should have its own
+  <code>message</code> wrapper and its own <code>bubble</code>.
+</p>
+
+<p>
+  Do not combine multiple separate texts into one bubble merely because the same person sent them.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble">oh wait fuck</p>
+  </div>
+
+  <div class="message incoming">
+    <p class="bubble">shit you're not nick</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">can confirm. i am not nick.</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;oh wait fuck&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;shit you're not nick&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message outgoing"&gt;
+  &lt;p class="bubble"&gt;can confirm. i am not nick.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>5. Contact names</h2>
+
+<p>
+  Use <code>contact-name</code> near the top of a conversation to show the name saved in the phone.
+</p>
+
+<p>
+  Before a character has been saved as a contact, use something like
+  <em>Unknown Number</em>, <em>Unknown Caller</em>, or the visible phone number if the original includes it.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <p class="contact-name">Unknown Number</p>
+
+  <div class="message incoming">
+    <p class="bubble">who even are you lol</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;p class="contact-name"&gt;Unknown Number&lt;/p&gt;</code></pre>
+
+<p>
+  After the phone owner saves the contact, change only the visible text:
+</p>
+
+<pre><code>&lt;p class="contact-name"&gt;Kalliope&lt;/p&gt;</code></pre>
+
+<hr />
+
+<h2>6. Sender labels</h2>
+
+<p>
+  Use the <code>sender</code> class when a sender's name needs to appear above a message.
+  This is most useful for group chats, multiple unknown numbers, or any screen where the sender would otherwise be unclear.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="sender">Unknown Number</p>
+    <p class="bubble">This message has a sender label.</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="sender"&gt;Unknown Number&lt;/p&gt;
+  &lt;p class="bubble"&gt;This message has a sender label.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Sender labels are optional in one-on-one conversations.
+  When several messages from the same person appear consecutively, the label does not have to be repeated above every bubble.
+</p>
+
+<hr />
+
+<h2>7. Bold, italics, and underlining</h2>
+
+<p>
+  Use <code>&lt;strong&gt;</code> for bold text,
+  <code>&lt;em&gt;</code> for italic text, and
+  <code>&lt;u&gt;</code> for underlined text.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble">
+      This has <strong>bold text</strong>,
+      <em>italic text</em>, and
+      <u>underlined text</u>.
+    </p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">
+      This is <strong><em><u>bold, italic, and underlined</u></em></strong>.
+    </p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;
+    This has &lt;strong&gt;bold text&lt;/strong&gt;,
+    &lt;em&gt;italic text&lt;/em&gt;, and
+    &lt;u&gt;underlined text&lt;/u&gt;.
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message outgoing"&gt;
+  &lt;p class="bubble"&gt;
+    This is &lt;strong&gt;&lt;em&gt;&lt;u&gt;bold, italic, and underlined&lt;/u&gt;&lt;/em&gt;&lt;/strong&gt;.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Nested tags must close in reverse order.
+</p>
+
+<p>Correct:</p>
+
+<pre><code>&lt;strong&gt;&lt;em&gt;&lt;u&gt;text&lt;/u&gt;&lt;/em&gt;&lt;/strong&gt;</code></pre>
+
+<hr />
+
+<h2>8. Emojis</h2>
+
+<p>
+  Ordinary Unicode emojis can be pasted directly into a message.
+  They do not need a special class or an image file.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble">what are you doing 😭</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">nothing suspicious 👍</p>
+  </div>
+
+  <div class="message incoming">
+    <p class="bubble">sure 💀💀💀</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;what are you doing 😭&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message outgoing"&gt;
+  &lt;p class="bubble"&gt;nothing suspicious 👍&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;sure 💀💀💀&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Preserve the exact emoji and number of repeated emojis used in the archived chapter.
+  Emojis may look slightly different on different devices because each operating system uses its own emoji artwork.
+</p>
+
+<hr />
+
+<h2>9. Line breaks inside one message</h2>
+
+<p>
+  Use <code>&lt;br /&gt;</code> when text belongs in one message bubble but needs to continue on a new line.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble">
+      I have two questions.<br />
+      First, why are you awake?<br />
+      Second, why did you answer?
+    </p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;
+    I have two questions.&lt;br /&gt;
+    First, why are you awake?&lt;br /&gt;
+    Second, why did you answer?
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Use separate message wrappers instead when the original fic shows separate texts.
+</p>
+
+<hr />
+
+<h2>10. Date and time dividers</h2>
+
+<p>
+  Use <code>chat-date</code> for a centered date, day, time, or major conversation break.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <p class="chat-date">Today, 3:02 PM</p>
+
+  <div class="message incoming">
+    <p class="bubble">are you awake?</p>
+  </div>
+
+  <p class="chat-date">Later that evening</p>
+
+  <div class="message outgoing">
+    <p class="bubble">unfortunately</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;p class="chat-date"&gt;Today, 3:02 PM&lt;/p&gt;
+
+&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;are you awake?&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p class="chat-date"&gt;Later that evening&lt;/p&gt;</code></pre>
+
+<p>
+  Do not invent timestamps or dates that were not present in the archived version unless the reupload team intentionally decides to add them.
+</p>
+
+<hr />
+
+<h2>11. Message timestamps, delivery status, and read receipts</h2>
+
+<p>
+  Use <code>message-time</code> for a timestamp,
+  <code>message-status</code> for a standalone status, or
+  <code>message-meta</code> for a combined time and status.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble">This message has a timestamp.</p>
+    <p class="message-time">3:14 PM</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">This message has been delivered.</p>
+    <p class="message-status">Delivered</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">This message has been read.</p>
+    <p class="message-meta">Read 3:19 PM</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;This message has a timestamp.&lt;/p&gt;
+  &lt;p class="message-time"&gt;3:14 PM&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message outgoing"&gt;
+  &lt;p class="bubble"&gt;This message has been delivered.&lt;/p&gt;
+  &lt;p class="message-status"&gt;Delivered&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="message outgoing"&gt;
+  &lt;p class="bubble"&gt;This message has been read.&lt;/p&gt;
+  &lt;p class="message-meta"&gt;Read 3:19 PM&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Delivery and read receipts normally belong beneath outgoing messages because they report the status of a message sent by the phone owner.
+</p>
+
+<hr />
+
+<h2>12. Typing indicators</h2>
+
+<p>
+  Use the <code>typing</code> class in addition to <code>bubble</code>.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming">
+    <p class="bubble typing">•••</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble typing"&gt;•••&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>13. System messages</h2>
+
+<p>
+  Use <code>system-message</code> for interface information that is not dialogue,
+  such as missed calls, deleted messages, contact-name changes, group-chat events, or shared locations.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <p class="system-message">Missed voice call</p>
+  <p class="system-message">You changed the contact name to Nick.</p>
+  <p class="system-message">A message was deleted.</p>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;p class="system-message"&gt;Missed voice call&lt;/p&gt;
+&lt;p class="system-message"&gt;You changed the contact name to Nick.&lt;/p&gt;
+&lt;p class="system-message"&gt;A message was deleted.&lt;/p&gt;</code></pre>
+
+<hr />
+
+<h2>14. Images hosted on GitHub</h2>
+
+<p>
+  Images are stored in the reupload's GitHub repository and embedded into AO3 using an
+  <code>&lt;img&gt;</code> tag.
+</p>
+
+<p>
+  The value of <code>src</code> must be a URL that opens the image itself.
+  Do not use the ordinary GitHub repository page URL containing <code>/blob/</code>,
+  because that opens a GitHub webpage rather than directly serving the image.
+</p>
+
+<p>
+  Use the repository file's <strong>Raw</strong> URL, which normally begins with:
+</p>
+
+<pre><code>https://raw.githubusercontent.com/USERNAME/REPOSITORY/BRANCH/path/to/image.jpg</code></pre>
+
+<p>
+  Replace <code>USERNAME</code>, <code>REPOSITORY</code>, <code>BRANCH</code>, and the file path with the real values.
+</p>
+
+<p>Example:</p>
+
+<pre><code>https://raw.githubusercontent.com/example-user/area-codes-archive/main/images/chapter-04/nick-asleep.jpg</code></pre>
+
+<p>
+  Keep the GitHub repository public while the images are embedded in the AO3 work.
+  Renaming, moving, or deleting an image in GitHub will break the old URL unless every AO3 chapter using it is updated.
+</p>
+
+<hr />
+
+<h2>15. Image-only messages</h2>
+
+<p>
+  Use <code>image-message</code> on the message wrapper,
+  <code>image-bubble</code> on the bubble container, and
+  <code>message-image</code> on the image itself.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming image-message">
+    <div class="bubble image-bubble">
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/example.jpg"
+        alt="Example image sent in a text conversation."
+      />
+    </div>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/example.jpg"
+      alt="Example image sent in a text conversation."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Change <code>incoming</code> to <code>outgoing</code> when the phone owner sent the image.
+</p>
+
+<hr />
+
+<h2>16. Image alternative text</h2>
+
+<p>
+  Every image must include an <code>alt</code> attribute.
+  The alternative text explains the image for screen-reader users and appears if the image cannot load.
+</p>
+
+<p>Good:</p>
+
+<pre><code>alt="Nick asleep face-down across a couch with one shoe still on."</code></pre>
+
+<p>Too vague:</p>
+
+<pre><code>alt="image"</code></pre>
+
+<p>
+  Describe information that matters to the scene.
+  Do not include phrases such as “image of” or “picture of” unless that distinction is narratively important.
+</p>
+
+<p>
+  If an image contains important visible text, include that text in the alternative description:
+</p>
+
+<pre><code>alt="Screenshot of a message reading: Nick, answer your phone before I drive to Houston myself."</code></pre>
+
+<hr />
+
+<h2>17. Image with a caption in the same bubble</h2>
+
+<p>
+  Use <code>image-caption</code> when text appears directly beneath the image inside the same message bubble.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming image-message">
+    <div class="bubble image-bubble">
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/nick-asleep.jpg"
+        alt="Nick asleep face-down across a couch with one shoe still on."
+      />
+      <p class="image-caption">this is the idiot in question</p>
+    </div>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/nick-asleep.jpg"
+      alt="Nick asleep face-down across a couch with one shoe still on."
+    /&gt;
+    &lt;p class="image-caption"&gt;this is the idiot in question&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>18. Image followed by a separate text message</h2>
+
+<p>
+  When the archived fic shows an image message and then a separate text,
+  use two separate message wrappers.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming image-message">
+    <div class="bubble image-bubble">
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/nick-asleep.jpg"
+        alt="Nick asleep face-down across a couch with one shoe still on."
+      />
+    </div>
+  </div>
+
+  <div class="message incoming">
+    <p class="bubble">this is the idiot in question</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/nick-asleep.jpg"
+      alt="Nick asleep face-down across a couch with one shoe still on."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;this is the idiot in question&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>19. Image with a timestamp or receipt</h2>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message outgoing image-message">
+    <div class="bubble image-bubble">
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/florida-rain.jpg"
+        alt="A palm tree bending sideways in heavy rain."
+      />
+    </div>
+    <p class="message-meta">4:52 PM · Delivered</p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message outgoing image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/florida-rain.jpg"
+      alt="A palm tree bending sideways in heavy rain."
+    /&gt;
+  &lt;/div&gt;
+  &lt;p class="message-meta"&gt;4:52 PM · Delivered&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>20. Multiple images in one message</h2>
+
+<p>
+  Use <code>image-stack</code> when multiple images were sent as one grouped message.
+  Stacking is the safest layout across screen sizes and custom AO3 site skins.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming image-message">
+    <div class="bubble image-bubble image-stack">
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/coffee-before.jpg"
+        alt="Nick holding an enormous iced coffee."
+      />
+
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/coffee-after.jpg"
+        alt="The iced coffee spilled across a car seat."
+      />
+    </div>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble image-stack"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/coffee-before.jpg"
+      alt="Nick holding an enormous iced coffee."
+    /&gt;
+
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/coffee-after.jpg"
+      alt="The iced coffee spilled across a car seat."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Use one <code>alt</code> description per image.
+</p>
+
+<hr />
+
+<h2>21. Visible image transcripts</h2>
+
+<p>
+  Use <code>image-transcript</code> when an image contains substantial text that should also be available visibly beneath it.
+  This is especially useful for screenshots, handwritten notes, memes whose wording matters, and social-media posts.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <div class="message incoming image-message">
+    <div class="bubble image-bubble">
+      <img
+        class="message-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/message-screenshot.jpg"
+        alt="Screenshot of a message from Nick."
+      />
+    </div>
+  </div>
+
+  <p class="image-transcript">
+    <strong>Image transcript:</strong>
+    Nick, answer your phone before I drive to Houston myself.
+  </p>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/message-screenshot.jpg"
+      alt="Screenshot of a message from Nick."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p class="image-transcript"&gt;
+  &lt;strong&gt;Image transcript:&lt;/strong&gt;
+  Nick, answer your phone before I drive to Houston myself.
+&lt;/p&gt;</code></pre>
+
+<hr />
+
+<h2>22. Group chats</h2>
+
+<p>
+  Use <code>contact-name</code> for the group-chat name and
+  <code>sender</code> above incoming messages so readers know which participant sent each one.
+</p>
+
+<h3>Rendered example</h3>
+
+<div class="textfic">
+  <p class="contact-name">Group Chat: Bad Decisions</p>
+
+  <div class="message incoming">
+    <p class="sender">Nick</p>
+    <p class="bubble">Who added the unknown number?</p>
+  </div>
+
+  <div class="message incoming">
+    <p class="sender">Unknown Number</p>
+    <p class="bubble">I invited myself 😌</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble">Please stop encouraging her.</p>
+  </div>
+
+  <div class="message incoming">
+    <p class="sender">Nick</p>
+    <p class="bubble"><strong>No.</strong></p>
+  </div>
+</div>
+
+<h3>HTML used</h3>
+
+<pre><code>&lt;div class="textfic"&gt;
+  &lt;p class="contact-name"&gt;Group Chat: Bad Decisions&lt;/p&gt;
+
+  &lt;div class="message incoming"&gt;
+    &lt;p class="sender"&gt;Nick&lt;/p&gt;
+    &lt;p class="bubble"&gt;Who added the unknown number?&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="message incoming"&gt;
+    &lt;p class="sender"&gt;Unknown Number&lt;/p&gt;
+    &lt;p class="bubble"&gt;I invited myself 😌&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="message outgoing"&gt;
+    &lt;p class="bubble"&gt;Please stop encouraging her.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>23. Quick class reference</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Purpose</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><code>textfic</code></td>
+      <td>Wraps the entire text conversation.</td>
+    </tr>
+    <tr>
+      <td><code>contact-name</code></td>
+      <td>Displays the contact name or group-chat name.</td>
+    </tr>
+    <tr>
+      <td><code>chat-date</code></td>
+      <td>Displays a centered date, day, time, or conversation divider.</td>
+    </tr>
+    <tr>
+      <td><code>message</code></td>
+      <td>Wraps one individual message and any metadata belonging to it.</td>
+    </tr>
+    <tr>
+      <td><code>incoming</code></td>
+      <td>Places a received message on the left.</td>
+    </tr>
+    <tr>
+      <td><code>outgoing</code></td>
+      <td>Places a sent message on the right.</td>
+    </tr>
+    <tr>
+      <td><code>sender</code></td>
+      <td>Shows the sender's name above a message.</td>
+    </tr>
+    <tr>
+      <td><code>bubble</code></td>
+      <td>Creates the visible message bubble.</td>
+    </tr>
+    <tr>
+      <td><code>message-time</code></td>
+      <td>Shows a timestamp beneath a message.</td>
+    </tr>
+    <tr>
+      <td><code>message-status</code></td>
+      <td>Shows a status such as Delivered, Read, Sent, or Not Delivered.</td>
+    </tr>
+    <tr>
+      <td><code>message-meta</code></td>
+      <td>Shows a combined timestamp and status on one line.</td>
+    </tr>
+    <tr>
+      <td><code>system-message</code></td>
+      <td>Displays centered interface information that is not dialogue.</td>
+    </tr>
+    <tr>
+      <td><code>typing</code></td>
+      <td>Styles a bubble as a typing indicator.</td>
+    </tr>
+    <tr>
+      <td><code>image-message</code></td>
+      <td>Allows a message containing an image to use the image-message sizing rules.</td>
+    </tr>
+    <tr>
+      <td><code>image-bubble</code></td>
+      <td>Adjusts padding and overflow for a bubble containing an image.</td>
+    </tr>
+    <tr>
+      <td><code>message-image</code></td>
+      <td>Makes an embedded image scale safely inside its bubble.</td>
+    </tr>
+    <tr>
+      <td><code>image-caption</code></td>
+      <td>Displays text directly beneath an image inside the same bubble.</td>
+    </tr>
+    <tr>
+      <td><code>image-stack</code></td>
+      <td>Formats multiple images stacked inside one message.</td>
+    </tr>
+    <tr>
+      <td><code>image-transcript</code></td>
+      <td>Displays a visible transcript or description beneath an image.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2>24. HTML tag reference</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Visible HTML</th>
+      <th scope="col">Purpose</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><code>&amp;lt;strong&amp;gt;text&amp;lt;/strong&amp;gt;</code></td>
+      <td>Creates <strong>bold text</strong>.</td>
+    </tr>
+    <tr>
+      <td><code>&amp;lt;em&amp;gt;text&amp;lt;/em&amp;gt;</code></td>
+      <td>Creates <em>italic text</em>.</td>
+    </tr>
+    <tr>
+      <td><code>&amp;lt;u&amp;gt;text&amp;lt;/u&amp;gt;</code></td>
+      <td>Creates <u>underlined text</u>.</td>
+    </tr>
+    <tr>
+      <td><code>&amp;lt;br /&amp;gt;</code></td>
+      <td>Creates a new line inside the same bubble.</td>
+    </tr>
+    <tr>
+      <td><code>&amp;lt;p&amp;gt;text&amp;lt;/p&amp;gt;</code></td>
+      <td>Creates a paragraph.</td>
+    </tr>
+    <tr>
+      <td><code>&amp;lt;div&amp;gt;...&amp;lt;/div&amp;gt;</code></td>
+      <td>Creates a structural container.</td>
+    </tr>
+    <tr>
+      <td><code>&amp;lt;img src="URL" alt="Description" /&amp;gt;</code></td>
+      <td>Embeds an externally hosted image.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2>25. GitHub image-file organization</h2>
+
+<p>
+  Keep image filenames descriptive, stable, and unique.
+  A recommended structure is:
+</p>
+
+<pre><code>images/
+  chapter-001/
+    ch001-msg001-wrong-number-profile.jpg
+    ch001-msg042-nick-asleep.jpg
+  chapter-002/
+    ch002-msg018-reaction-image.png</code></pre>
+
+<p>
+  Recommended filename pattern:
+</p>
+
+<pre><code>chCHAPTER-msgMESSAGE-short-description.extension</code></pre>
+
+<p>
+  Examples:
+</p>
+
+<pre><code>ch004-msg017-nick-asleep.jpg
+ch011-msg063-weather-screenshot.png
+ch023-msg004-reaction-meme.gif</code></pre>
+
+<p>
+  Avoid spaces, punctuation, and vague names such as <code>image1.jpg</code>.
+  Use lowercase letters, numbers, and hyphens.
+</p>
+
+<p>
+  Keep a local backup of the repository and the original archived files.
+  GitHub is the live host used by AO3, but it should not be the only surviving copy.
+</p>
+
+<hr />
+
+<h2>26. Common mistakes</h2>
+
+<h3>Using a GitHub webpage URL instead of the image URL</h3>
+
+<p>Wrong:</p>
+
+<pre><code>https://github.com/USERNAME/REPOSITORY/blob/main/images/example.jpg</code></pre>
+
+<p>Correct raw-file form:</p>
+
+<pre><code>https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/example.jpg</code></pre>
+
+<h3>Forgetting alternative text</h3>
+
+<p>Wrong:</p>
+
+<pre><code>&lt;img class="message-image" src="IMAGE-URL" /&gt;</code></pre>
+
+<p>Correct:</p>
+
+<pre><code>&lt;img
+  class="message-image"
+  src="IMAGE-URL"
+  alt="A concise description of the image and any important visible text."
+/&gt;</code></pre>
+
+<h3>Putting incoming messages on the wrong side</h3>
+
+<ul>
+  <li><code>incoming</code> means received by the phone owner and appears on the left.</li>
+  <li><code>outgoing</code> means sent by the phone owner and appears on the right.</li>
+</ul>
+
+<h3>Forgetting the bubble class</h3>
+
+<p>Wrong:</p>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p&gt;This will not have bubble styling.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Correct:</p>
+
+<pre><code>&lt;div class="message incoming"&gt;
+  &lt;p class="bubble"&gt;This will have bubble styling.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Putting multiple separate texts in one bubble</h3>
+
+<p>
+  If the archive shows separate messages, each message needs its own wrapper.
+</p>
+
+<h3>Accidentally changing the text</h3>
+
+<p>
+  Preserve original capitalization, spelling, punctuation, spacing, emphasis, emojis, and deliberate typos.
+  Something that looks like a mistake may be part of the character's texting style.
+</p>
+
+<p>
+  Obvious transfer errors, such as two messages being accidentally joined together, should be checked against the archived Wattpad chapter before correction.
+</p>
+
+<h3>Renaming or moving an image after posting</h3>
+
+<p>
+  Changing a GitHub filename or folder path changes its URL.
+  Update every AO3 chapter using that URL or leave the original file in place.
+</p>
+
+<hr />
+
+<h2>27. Reupload workflow</h2>
+
+<ol>
+  <li>Open the archived Wattpad chapter.</li>
+  <li>Identify which character owns the phone or viewpoint being displayed.</li>
+  <li>Mark received messages as <code>incoming</code>.</li>
+  <li>Mark sent messages as <code>outgoing</code>.</li>
+  <li>Give every separate text its own message wrapper.</li>
+  <li>Preserve bold, italics, underlining, capitalization, punctuation, and emojis.</li>
+  <li>Download and preserve every image from the archive.</li>
+  <li>Give each image a stable descriptive filename.</li>
+  <li>Add the image to the correct GitHub repository folder.</li>
+  <li>Use the image's raw GitHub URL in the AO3 <code>src</code> attribute.</li>
+  <li>Write meaningful <code>alt</code> text.</li>
+  <li>Add contact names, timestamps, receipts, and system messages only where appropriate.</li>
+  <li>Paste the chapter into AO3 using the HTML editor.</li>
+  <li>Preview the chapter before posting.</li>
+  <li>Check text and images in both a light and dark AO3 site skin.</li>
+  <li>Check the chapter at a narrow or mobile-sized width.</li>
+  <li>Open each embedded image to confirm the URL works while logged out of GitHub.</li>
+</ol>
+
+<hr />
+
+<h2>28. Blank chapter template</h2>
+
+<pre><code>&lt;div class="textfic"&gt;
+
+  &lt;p class="contact-name"&gt;Unknown Number&lt;/p&gt;
+
+  &lt;div class="message incoming"&gt;
+    &lt;p class="bubble"&gt;Incoming message goes here.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="message outgoing"&gt;
+    &lt;p class="bubble"&gt;Outgoing message goes here.&lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>29. Blank image templates</h2>
+
+<h3>Incoming image</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/FILE.jpg"
+      alt="Describe the image."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Outgoing image</h3>
+
+<pre><code>&lt;div class="message outgoing image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/FILE.jpg"
+      alt="Describe the image."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Image and caption in one bubble</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble"&gt;
+    &lt;img
+      class="message-image"
+      src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/FILE.jpg"
+      alt="Describe the image."
+    /&gt;
+    &lt;p class="image-caption"&gt;Caption text&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Two images in one message</h3>
+
+<pre><code>&lt;div class="message incoming image-message"&gt;
+  &lt;div class="bubble image-bubble image-stack"&gt;
+    &lt;img
+      class="message-image"
+      src="FIRST-RAW-GITHUB-URL"
+      alt="Describe the first image."
+    /&gt;
+
+    &lt;img
+      class="message-image"
+      src="SECOND-RAW-GITHUB-URL"
+      alt="Describe the second image."
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h2>30. Final checklist</h2>
+
+<ul>
+  <li>Is the entire conversation inside <code>&lt;div class="textfic"&gt;</code>?</li>
+  <li>Are incoming messages on the left?</li>
+  <li>Are outgoing messages on the right?</li>
+  <li>Does every separate text have its own wrapper?</li>
+  <li>Does every text message include <code>class="bubble"</code>?</li>
+  <li>Were the original bold, italic, and underlined sections preserved?</li>
+  <li>Were all original emojis preserved exactly?</li>
+  <li>Were intentional capitalization, spelling, and punctuation preserved?</li>
+  <li>Are timestamps and receipts included only where appropriate?</li>
+  <li>Does every image use a working raw GitHub URL?</li>
+  <li>Does every image include meaningful <code>alt</code> text?</li>
+  <li>Were image captions kept inside or outside the bubble according to the archive?</li>
+  <li>Were grouped images kept together?</li>
+  <li>Are all opening tags properly closed?</li>
+  <li>Was the chapter pasted into AO3's HTML editor?</li>
+  <li>Was the final result checked using Preview?</li>
+  <li>Is incoming text readable in both light and dark site skins?</li>
+  <li>Do all images scale correctly on a narrow screen?</li>
+</ul>
