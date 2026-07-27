@@ -1227,3 +1227,580 @@ ch023-msg004-reaction-meme.gif</code></pre>
   <li>Is incoming text readable in both light and dark site skins?</li>
   <li>Do all images scale correctly on a narrow screen?</li>
 </ul>
+<hr />
+
+<h2>Additional Formatting: Prose, Speaker Styles, Calls, and Twitter</h2>
+
+<p>
+  The following sections extend the original text-fic guide for chapters that also contain
+  ordinary prose scenes, character-specific Wattpad formatting, phone-call screens, and
+  Twitter-style posts or threads.
+</p>
+
+<h3>Character-specific formatting</h3>
+
+<p>
+  The archived Wattpad version uses rich-text formatting to distinguish certain characters.
+  Apply the appropriate class only to that character's dialogue or message text. Keep narration
+  outside the formatted <code>&lt;span&gt;</code>.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Character</th>
+      <th scope="col">Formatting</th>
+      <th scope="col">Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clay / Bartholomew</td>
+      <td><strong>Bold</strong></td>
+      <td><code>speaker-clay</code></td>
+    </tr>
+    <tr>
+      <td>Caoimhe</td>
+      <td><em>Italics</em></td>
+      <td><code>speaker-caoimhe</code></td>
+    </tr>
+    <tr>
+      <td>Nick</td>
+      <td><strong><u>Bold and underlined</u></strong></td>
+      <td><code>speaker-nick</code></td>
+    </tr>
+    <tr>
+      <td>Quackity</td>
+      <td><u>Underlined</u></td>
+      <td><code>speaker-quackity</code></td>
+    </tr>
+    <tr>
+      <td>Drew</td>
+      <td>Regular text</td>
+      <td><code>speaker-drew</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Rendered prose example</h4>
+
+<p>
+  <span class="speaker-clay">"Hello?"</span>
+  Clay asked.
+</p>
+
+<p>
+  <span class="speaker-caoimhe">"I assume you finally read Nick's messages."</span>
+</p>
+
+<p>
+  <span class="speaker-nick">"He's not mad. Just disappointed."</span>
+</p>
+
+<p>
+  <span class="speaker-quackity">"Why are you all like this?"</span>
+</p>
+
+<p>
+  <span class="speaker-drew">"I just got laid!"</span>
+</p>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;p&gt;
+  &lt;span class="speaker-clay"&gt;"Hello?"&lt;/span&gt;
+  Clay asked.
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;span class="speaker-caoimhe"&gt;
+    "I assume you finally read Nick's messages."
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;span class="speaker-nick"&gt;
+    "He's not mad. Just disappointed."
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;span class="speaker-quackity"&gt;
+    "Why are you all like this?"
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;span class="speaker-drew"&gt;"I just got laid!"&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+
+<h4>Speaker formatting inside text bubbles</h4>
+
+<div class="textfic">
+  <p class="contact-name">Nick</p>
+
+  <div class="message incoming">
+    <p class="bubble speaker-nick">he's not mad</p>
+  </div>
+
+  <div class="message outgoing">
+    <p class="bubble speaker-caoimhe">okay mom</p>
+  </div>
+</div>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;div class="textfic"&gt;
+  &lt;p class="contact-name"&gt;Nick&lt;/p&gt;
+
+  &lt;div class="message incoming"&gt;
+    &lt;p class="bubble speaker-nick"&gt;he's not mad&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="message outgoing"&gt;
+    &lt;p class="bubble speaker-caoimhe"&gt;okay mom&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h3>Switching between prose and text messages</h3>
+
+<p>
+  Ordinary scene prose must stay outside the <code>textfic</code> wrapper.
+  Open <code>textfic</code> only for a text-message section, close it, and then
+  return to ordinary paragraphs.
+</p>
+
+<pre><code>&lt;p&gt;
+  Ordinary scene prose goes here.
+&lt;/p&gt;
+
+&lt;div class="textfic"&gt;
+  &lt;p class="contact-name"&gt;Nick&lt;/p&gt;
+
+  &lt;div class="message incoming"&gt;
+    &lt;p class="bubble speaker-nick"&gt;he's not mad&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="message outgoing"&gt;
+    &lt;p class="bubble speaker-caoimhe"&gt;okay mom&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+  The scene continues in ordinary prose here.
+&lt;/p&gt;</code></pre>
+
+<p>
+  Do not wrap an entire prose scene in <code>textfic</code>. That class intentionally
+  narrows the page and applies phone-message spacing.
+</p>
+
+<hr />
+
+<h3>Phone-call cards</h3>
+
+<p>
+  Use <code>call-card</code> for incoming calls, missed calls, ended calls,
+  and similar phone-interface elements. Call cards normally remain outside
+  <code>textfic</code>.
+</p>
+
+<h4>Simple incoming call</h4>
+
+<div class="call-card incoming-call">
+  <p class="call-type">Incoming Call from</p>
+  <p class="call-name">“Daffy Duck”</p>
+</div>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;div class="call-card incoming-call"&gt;
+  &lt;p class="call-type"&gt;Incoming Call from&lt;/p&gt;
+  &lt;p class="call-name"&gt;“Daffy Duck”&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h4>Incoming call with a contact image</h4>
+
+<div class="call-card incoming-call">
+  <img
+    class="call-avatar"
+    src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/chapter-013/bart-simpson-contact.jpg"
+    alt="Bart Simpson, used as Daffy Duck's contact photo."
+  />
+  <p class="call-type">Incoming Call from</p>
+  <p class="call-name">“Daffy Duck”</p>
+  <p class="call-detail">Slide to answer</p>
+</div>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;div class="call-card incoming-call"&gt;
+  &lt;img
+    class="call-avatar"
+    src="RAW-GITHUB-IMAGE-URL"
+    alt="Bart Simpson, used as Daffy Duck's contact photo."
+  /&gt;
+
+  &lt;p class="call-type"&gt;Incoming Call from&lt;/p&gt;
+  &lt;p class="call-name"&gt;“Daffy Duck”&lt;/p&gt;
+  &lt;p class="call-detail"&gt;Slide to answer&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Use square avatar files when possible. AO3 does not currently allow the CSS
+  <code>object-fit</code> property, so rectangular images may appear oval when rounded.
+</p>
+
+<h4>Missed call</h4>
+
+<div class="call-card missed-call">
+  <p class="call-type">Missed Call</p>
+  <p class="call-name">Daffy Duck</p>
+  <p class="call-detail">8:42 PM</p>
+</div>
+
+<pre><code>&lt;div class="call-card missed-call"&gt;
+  &lt;p class="call-type"&gt;Missed Call&lt;/p&gt;
+  &lt;p class="call-name"&gt;Daffy Duck&lt;/p&gt;
+  &lt;p class="call-detail"&gt;8:42 PM&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h4>Call ended</h4>
+
+<div class="call-card ended-call">
+  <p class="call-type">Call Ended</p>
+  <p class="call-name">Daffy Duck</p>
+  <p class="call-detail">12 minutes</p>
+</div>
+
+<pre><code>&lt;div class="call-card ended-call"&gt;
+  &lt;p class="call-type"&gt;Call Ended&lt;/p&gt;
+  &lt;p class="call-name"&gt;Daffy Duck&lt;/p&gt;
+  &lt;p class="call-detail"&gt;12 minutes&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Omit any image, time, duration, or instruction that was not present in the archive.
+</p>
+
+<hr />
+
+<h3>Twitter posts and threads</h3>
+
+<p>
+  Use <code>twitter-thread</code> as the outer wrapper for a post or thread.
+  Each post uses <code>twitter-post</code>. Replies also receive
+  <code>twitter-reply</code>.
+</p>
+
+<h4>Single Twitter post</h4>
+
+<div class="twitter-thread">
+  <div class="twitter-post">
+    <div class="twitter-header">
+      <img
+        class="twitter-avatar"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/twitter/clay-avatar.jpg"
+        alt="Clay's Twitter profile picture."
+      />
+
+      <div class="twitter-account">
+        <span class="twitter-name">Clay</span>
+        <span class="twitter-handle">@floridaman</span>
+      </div>
+    </div>
+
+    <p class="twitter-body">everyone knows a nick</p>
+    <p class="twitter-meta">3:47 PM · March 14, 2020</p>
+    <p class="twitter-stats">12 replies · 48 retweets · 317 likes</p>
+  </div>
+</div>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;div class="twitter-thread"&gt;
+  &lt;div class="twitter-post"&gt;
+    &lt;div class="twitter-header"&gt;
+      &lt;img
+        class="twitter-avatar"
+        src="RAW-GITHUB-AVATAR-URL"
+        alt="Clay's Twitter profile picture."
+      /&gt;
+
+      &lt;div class="twitter-account"&gt;
+        &lt;span class="twitter-name"&gt;Clay&lt;/span&gt;
+        &lt;span class="twitter-handle"&gt;@floridaman&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p class="twitter-body"&gt;everyone knows a nick&lt;/p&gt;
+    &lt;p class="twitter-meta"&gt;3:47 PM · March 14, 2020&lt;/p&gt;
+    &lt;p class="twitter-stats"&gt;
+      12 replies · 48 retweets · 317 likes
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Twitter profile images are optional. Omit the avatar element rather than inventing
+  one when the archived chapter does not include an avatar.
+</p>
+
+<h4>Mentions, hashtags, formatting, and emojis</h4>
+
+<div class="twitter-thread">
+  <div class="twitter-post">
+    <div class="twitter-header">
+      <div class="twitter-account">
+        <span class="twitter-name">Caoimhe</span>
+        <span class="twitter-handle">@gertrude</span>
+      </div>
+    </div>
+
+    <p class="twitter-body">
+      apparently
+      <span class="twitter-mention">@floridaman</span>
+      thinks <strong>all</strong> Texans are attempted murderers 😭
+      <span class="twitter-hashtag">#FreeNick</span>
+    </p>
+
+    <p class="twitter-meta">8:19 PM · March 14, 2020</p>
+  </div>
+</div>
+
+<pre><code>&lt;p class="twitter-body"&gt;
+  apparently
+  &lt;span class="twitter-mention"&gt;@floridaman&lt;/span&gt;
+  thinks &lt;strong&gt;all&lt;/strong&gt; Texans are attempted murderers 😭
+  &lt;span class="twitter-hashtag"&gt;#FreeNick&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+
+<h4>Compact reply thread</h4>
+
+<div class="twitter-thread">
+  <div class="twitter-post">
+    <div class="twitter-header">
+      <div class="twitter-account">
+        <span class="twitter-name">quackity</span>
+        <span class="twitter-handle">@quackity4k</span>
+      </div>
+    </div>
+    <p class="twitter-body">stole dream's girl today</p>
+    <p class="twitter-meta">57 mins ago</p>
+    <p class="twitter-stats">11.2k replies · 524 retweets · 62.5k likes</p>
+  </div>
+
+  <div class="twitter-post twitter-reply">
+    <div class="twitter-header">
+      <div class="twitter-account">
+        <span class="twitter-name">dream</span>
+        <span class="twitter-handle">@dreamwastaken</span>
+      </div>
+    </div>
+    <p class="twitter-body">WHAT THE HELL</p>
+  </div>
+
+  <div class="twitter-post twitter-reply">
+    <div class="twitter-header">
+      <div class="twitter-account">
+        <span class="twitter-name">sapnap</span>
+        <span class="twitter-handle">@sapnapalt</span>
+      </div>
+    </div>
+    <p class="twitter-body">atta girl</p>
+  </div>
+</div>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;div class="twitter-thread"&gt;
+  &lt;div class="twitter-post"&gt;
+    &lt;div class="twitter-header"&gt;
+      &lt;div class="twitter-account"&gt;
+        &lt;span class="twitter-name"&gt;quackity&lt;/span&gt;
+        &lt;span class="twitter-handle"&gt;@quackity4k&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p class="twitter-body"&gt;stole dream's girl today&lt;/p&gt;
+    &lt;p class="twitter-meta"&gt;57 mins ago&lt;/p&gt;
+    &lt;p class="twitter-stats"&gt;
+      11.2k replies · 524 retweets · 62.5k likes
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="twitter-post twitter-reply"&gt;
+    &lt;div class="twitter-header"&gt;
+      &lt;div class="twitter-account"&gt;
+        &lt;span class="twitter-name"&gt;dream&lt;/span&gt;
+        &lt;span class="twitter-handle"&gt;@dreamwastaken&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p class="twitter-body"&gt;WHAT THE HELL&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h4>Post with two screenshots</h4>
+
+<div class="twitter-thread">
+  <div class="twitter-post">
+    <div class="twitter-header">
+      <div class="twitter-account">
+        <span class="twitter-name">quackity</span>
+        <span class="twitter-handle">@quackity4k</span>
+      </div>
+    </div>
+
+    <p class="twitter-body">stole dream's girl today</p>
+
+    <div class="twitter-media-stack">
+      <img
+        class="twitter-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/example-one.jpg"
+        alt="First screenshot of Quackity's conversation with Caoimhe."
+      />
+
+      <img
+        class="twitter-image"
+        src="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/images/example-two.jpg"
+        alt="Second screenshot of Quackity's conversation with Caoimhe."
+      />
+    </div>
+
+    <p class="twitter-meta">57 mins ago</p>
+  </div>
+</div>
+
+<h4>HTML used</h4>
+
+<pre><code>&lt;div class="twitter-post"&gt;
+  &lt;div class="twitter-header"&gt;
+    &lt;div class="twitter-account"&gt;
+      &lt;span class="twitter-name"&gt;quackity&lt;/span&gt;
+      &lt;span class="twitter-handle"&gt;@quackity4k&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p class="twitter-body"&gt;stole dream's girl today&lt;/p&gt;
+
+  &lt;div class="twitter-media-stack"&gt;
+    &lt;img
+      class="twitter-image"
+      src="FIRST-RAW-GITHUB-SCREENSHOT-URL"
+      alt="First screenshot of Quackity's conversation with Caoimhe."
+    /&gt;
+
+    &lt;img
+      class="twitter-image"
+      src="SECOND-RAW-GITHUB-SCREENSHOT-URL"
+      alt="Second screenshot of Quackity's conversation with Caoimhe."
+    /&gt;
+  &lt;/div&gt;
+
+  &lt;p class="twitter-meta"&gt;57 mins ago&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h4>Quote tweet</h4>
+
+<div class="twitter-thread">
+  <div class="twitter-post">
+    <div class="twitter-header">
+      <div class="twitter-account">
+        <span class="twitter-name">Caoimhe</span>
+        <span class="twitter-handle">@gertrude</span>
+      </div>
+    </div>
+
+    <p class="twitter-body">this aged well</p>
+
+    <div class="quote-tweet">
+      <span class="twitter-name">Clay</span>
+      <span class="twitter-handle">@floridaman</span>
+      <p class="twitter-body">i am never calling her</p>
+      <p class="twitter-meta">March 12, 2020</p>
+    </div>
+
+    <p class="twitter-meta">March 14, 2020</p>
+  </div>
+</div>
+
+<pre><code>&lt;div class="twitter-post"&gt;
+  &lt;div class="twitter-header"&gt;
+    &lt;div class="twitter-account"&gt;
+      &lt;span class="twitter-name"&gt;Caoimhe&lt;/span&gt;
+      &lt;span class="twitter-handle"&gt;@gertrude&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p class="twitter-body"&gt;this aged well&lt;/p&gt;
+
+  &lt;div class="quote-tweet"&gt;
+    &lt;span class="twitter-name"&gt;Clay&lt;/span&gt;
+    &lt;span class="twitter-handle"&gt;@floridaman&lt;/span&gt;
+    &lt;p class="twitter-body"&gt;i am never calling her&lt;/p&gt;
+    &lt;p class="twitter-meta"&gt;March 12, 2020&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;p class="twitter-meta"&gt;March 14, 2020&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<hr />
+
+<h3>Additional class reference</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>speaker-clay</code></td><td>Formats Clay or Bartholomew in bold.</td></tr>
+    <tr><td><code>speaker-caoimhe</code></td><td>Formats Caoimhe in italics.</td></tr>
+    <tr><td><code>speaker-nick</code></td><td>Formats Nick in bold and underlined text.</td></tr>
+    <tr><td><code>speaker-quackity</code></td><td>Formats Quackity in underlined text.</td></tr>
+    <tr><td><code>speaker-drew</code></td><td>Explicitly formats Drew as regular text.</td></tr>
+    <tr><td><code>call-card</code></td><td>Creates a phone-call interface card.</td></tr>
+    <tr><td><code>call-type</code></td><td>Displays Incoming Call, Missed Call, Call Ended, or similar text.</td></tr>
+    <tr><td><code>call-name</code></td><td>Displays the caller or contact name.</td></tr>
+    <tr><td><code>call-detail</code></td><td>Displays an optional number, time, duration, or instruction.</td></tr>
+    <tr><td><code>call-avatar</code></td><td>Displays the caller's contact image.</td></tr>
+    <tr><td><code>missed-call</code></td><td>Applies the missed-call visual variation.</td></tr>
+    <tr><td><code>ended-call</code></td><td>Applies the completed-call visual variation.</td></tr>
+    <tr><td><code>twitter-thread</code></td><td>Wraps one Twitter post or a full thread.</td></tr>
+    <tr><td><code>twitter-post</code></td><td>Creates one Twitter-style post.</td></tr>
+    <tr><td><code>twitter-header</code></td><td>Contains profile and account information.</td></tr>
+    <tr><td><code>twitter-avatar</code></td><td>Displays the account's profile image.</td></tr>
+    <tr><td><code>twitter-account</code></td><td>Groups the display name and handle.</td></tr>
+    <tr><td><code>twitter-name</code></td><td>Displays the account's display name.</td></tr>
+    <tr><td><code>twitter-handle</code></td><td>Displays the account's username.</td></tr>
+    <tr><td><code>twitter-body</code></td><td>Contains the main post text.</td></tr>
+    <tr><td><code>twitter-meta</code></td><td>Displays the post's date or relative time.</td></tr>
+    <tr><td><code>twitter-stats</code></td><td>Displays reply, retweet, and like counts.</td></tr>
+    <tr><td><code>twitter-reply</code></td><td>Formats a compact reply in a thread.</td></tr>
+    <tr><td><code>twitter-replying</code></td><td>Shows which account a post is replying to.</td></tr>
+    <tr><td><code>twitter-mention</code></td><td>Styles an account mention.</td></tr>
+    <tr><td><code>twitter-hashtag</code></td><td>Styles a hashtag.</td></tr>
+    <tr><td><code>twitter-link</code></td><td>Styles linked text.</td></tr>
+    <tr><td><code>twitter-image</code></td><td>Displays an attached image.</td></tr>
+    <tr><td><code>twitter-media-stack</code></td><td>Stacks multiple screenshots or images in one post.</td></tr>
+    <tr><td><code>quote-tweet</code></td><td>Creates a quoted post inside another post.</td></tr>
+  </tbody>
+</table>
+
+<h3>Additional checklist</h3>
+
+<ul>
+  <li>Were the correct character-specific speaker classes used?</li>
+  <li>Is ordinary prose outside the <code>textfic</code> wrapper?</li>
+  <li>Are phone-call cards outside <code>textfic</code> unless intentionally embedded?</li>
+  <li>Were unsupported CSS properties such as <code>object-fit</code> avoided?</li>
+  <li>Are call and Twitter avatar source images square when possible?</li>
+  <li>Are Twitter replies grouped inside one <code>twitter-thread</code> wrapper?</li>
+  <li>Are multiple Twitter screenshots inside <code>twitter-media-stack</code>?</li>
+  <li>Were absent avatars, dates, counts, or interface details omitted rather than invented?</li>
+</ul>
